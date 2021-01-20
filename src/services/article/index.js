@@ -13,6 +13,15 @@ router.get("/", async (req, res, next) => {
     res.status(500).send(e);
   }
 });
+router.get("/like", async (req, res, next) => {
+  try {
+    const response = await article.findTwo();
+    res.send(response);
+  } catch (e) {
+    console.log(e);
+    res.status(500).send(e);
+  }
+});
 
 router.get("/:id", async (req, res, next) => {
   try {

@@ -6,8 +6,13 @@ CREATE TABLE IF NOT EXISTS Article (
     headLine character varying(40) NOT NULL,
     subHead character varying(30) NOT NULL,
     content character varying(30)NOT NULL,
-    category character varying(60),
-    cover character varying(15)
+    author_id character varying(30)NOT NULL,
+    category_id character varying(30)NOT NULL,
+    cover character varying(15),
+
+    FOREIGN KEY (author_id) REFERENCES Author,
+     FOREIGN KEY (category_id) REFERENCES Category
+
     
 );
 CREATE TABLE IF NOT EXISTS Author (
